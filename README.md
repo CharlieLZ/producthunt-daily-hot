@@ -6,7 +6,7 @@
 
 Product Hunt Daily Hot is a GitHub Action-based automation tool that generates a daily Markdown file summarizing the top products from Product Hunt and automatically commits it to a GitHub repository. The project aims to help users quickly view the daily Product Hunt leaderboard and provide more detailed product information.
 
-[🌐 View here](https://decohack.com/category/producthunt/).
+[🌐 View here](https://producthunt.ai/).
 
 ## Preview
 
@@ -44,8 +44,6 @@ cd producthunt-daily-hot
 
 2. **Install Python dependencies:**
 
-Ensure you have Python 3.x installed. Then, install the required packages:
-
 ```bash
 pip install -r requirements.txt
 ```
@@ -66,9 +64,8 @@ pip install -r requirements.txt
 2. **Get Product Hunt Developer Token:**
 
    1. Visit [Product Hunt Developer Settings](https://www.producthunt.com/v2/oauth/applications)
-   2. Log in to your account
-   3. Create a new application in the developer settings
-   4. Obtain the Developer Token
+   2. Create a new application in the developer settings
+   3. Obtain the Developer Token
 
 3. **GitHub Actions Workflow:**
 
@@ -82,10 +79,17 @@ Once set up, the GitHub Action will automatically generate and commit a Markdown
 
 - Modify `scripts/product_hunt_list_to_md.py` to customize the format or add additional content.
 - Adjust the schedule in `.github/workflows/generate_markdown.yml` if needed.
+- Customize WordPress posting settings in the publishing workflow file.
 
 ### Example Output
 
 The generated files are stored in the `data/` directory. Each file is named in the format `PH-daily-YYYY-MM-DD.md`.
+
+### Troubleshooting
+
+- If the API requests fail, check your API keys and tokens in GitHub Secrets.
+- For WordPress publishing issues, verify your WordPress credentials and API access.
+- If translations are not working correctly, ensure your OpenAI API key has sufficient quota.
 
 ### Contributing
 

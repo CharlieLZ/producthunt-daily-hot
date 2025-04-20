@@ -2,8 +2,13 @@ name: Generate Daily Markdown
 
 on:
   schedule:
-    - cron: '01 7 * * *'  # 每天UTC时间早上7:01（北京时间下午3:01自动运行）
-  workflow_dispatch:  # 手动触发
+    # This is an automatic trigger that runs daily at 7:01 UTC (15:01 Beijing Time)
+    # The cron syntax is: minute hour day_of_month month day_of_week
+    - cron: '01 7 * * *'  # Runs daily at 7:01 UTC
+  
+  # This allows the workflow to be manually triggered from GitHub UI
+  # You can run it anytime by clicking "Run workflow" button on the Actions tab
+  workflow_dispatch:  # Manual trigger
 
 jobs:
   build:
@@ -22,13 +27,11 @@ jobs:
       run: |
         pip install --upgrade pip
         pip install -r requirements.txt
-        pip install openai>=1.0.0 python-dotenv beautifulsoup4 pytz requests
         pip install python-wordpress-xmlrpc
-        pip list  # 显示已安装的包及其版本
+        pip list  # Display installed packages and versions
 
     - name: Generate Markdown
       env:
-        OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         PRODUCTHUNT_DEVELOPER_TOKEN: ${{ secrets.PRODUCTHUNT_DEVELOPER_TOKEN }}
       run: |
         python scripts/product_hunt_list_to_md.py

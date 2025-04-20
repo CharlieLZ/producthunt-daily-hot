@@ -4,11 +4,11 @@ on:
   workflow_dispatch:
     inputs:
       batch_size:
-        description: '每批处理的文件数量'
+        description: 'Number of files to process per batch'
         required: false
         default: '3'
       pause:
-        description: '批次间暂停的秒数'
+        description: 'Seconds to pause between batches'
         required: false
         default: '120'
 
