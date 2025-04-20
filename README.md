@@ -1,6 +1,6 @@
 # Product Hunt Daily Hot List
 
-[English](README.en.md) | [中文](README.md)
+[English](README.md) | [中文](README.zh.md)
 
 ![License](https://img.shields.io/github/license/ViggoZ/producthunt-daily-hot) ![Python](https://img.shields.io/badge/python-3.x-blue)
 
