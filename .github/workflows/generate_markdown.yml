@@ -45,4 +45,4 @@ jobs:
 
     - name: Push changes
       run: |
-        git push --force https://${{ secrets.PAT }}@github.com/${{ github.repository_owner }}/producthunt-daily-hot-from-ViggoZ.git HEAD:main
+        git push --force https://${{ secrets.PAT }}@github.com/${{ github.repository_owner }}/producthunt-daily-hot.git HEAD:main
